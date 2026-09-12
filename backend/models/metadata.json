@@ -1,0 +1,279 @@
+{
+  "model_type": "LR-Scaled-52",
+  "model_version": "lr-v2",
+  "feature_names": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "query_length",
+    "fragment_length",
+    "num_dots",
+    "num_hyphens",
+    "num_underscores",
+    "num_slashes",
+    "num_question_marks",
+    "num_equals",
+    "num_ampersands",
+    "num_percent_chars",
+    "num_digits",
+    "num_letters",
+    "special_character_count",
+    "num_subdomains",
+    "has_ip",
+    "hostname_digit_count",
+    "hostname_hyphen_count",
+    "hostname_dot_count",
+    "has_https",
+    "has_http",
+    "has_port",
+    "non_standard_port",
+    "suspicious_keyword_count",
+    "entropy",
+    "hostname_entropy",
+    "digit_ratio",
+    "special_char_ratio",
+    "character_diversity",
+    "path_has_login_keyword",
+    "query_has_sensitive_keyword",
+    "hostname_has_suspicious_keyword",
+    "long_token_count",
+    "registrable_domain_length",
+    "subdomain_length",
+    "subdomain_depth",
+    "tld_length",
+    "max_hostname_token_length",
+    "avg_hostname_token_length",
+    "hostname_digit_ratio",
+    "suspicious_tld",
+    "brand_in_subdomain",
+    "brand_domain_mismatch",
+    "subdomain_keyword_count",
+    "has_at_symbol",
+    "percent_encoded_count",
+    "percent_encoding_ratio",
+    "hex_token_count",
+    "repeated_separator_count",
+    "url_decoded_length_diff"
+  ],
+  "feature_count": 52,
+  "removed_features": [],
+  "training_timestamp": "2026-09-12T17:04:04.728787+00:00",
+  "dataset": "PhiUSIIL_Phishing_URL_Dataset.csv",
+  "dataset_samples": 235370,
+  "class_distribution": {
+    "legitimate": 134850,
+    "phishing": 100520
+  },
+  "split": {
+    "train": 163927,
+    "val": 32346,
+    "test": 39097
+  },
+  "test_metrics": {
+    "accuracy": 0.9964,
+    "precision": 0.9995,
+    "recall": 0.9929,
+    "f1": 0.9962,
+    "roc_auc": 0.9981,
+    "confusion_matrix": [
+      [
+        20434,
+        10
+      ],
+      [
+        132,
+        18521
+      ]
+    ]
+  },
+  "val_metrics": {
+    "accuracy": 0.9968,
+    "precision": 0.9994,
+    "recall": 0.992,
+    "f1": 0.9957,
+    "roc_auc": 0.9975,
+    "confusion_matrix": [
+      [
+        20223,
+        7
+      ],
+      [
+        97,
+        12019
+      ]
+    ]
+  },
+  "sanity_test": {
+    "passed": 12,
+    "total": 15,
+    "results": [
+      {
+        "url": "https://google.com",
+        "expected": "not_phishing",
+        "verdict": "safe",
+        "risk_score": 10,
+        "phishing_prob": 0.1001,
+        "passed": true
+      },
+      {
+        "url": "https://github.com",
+        "expected": "not_phishing",
+        "verdict": "safe",
+        "risk_score": 34,
+        "phishing_prob": 0.3353,
+        "passed": true
+      },
+      {
+        "url": "https://microsoft.com",
+        "expected": "not_phishing",
+        "verdict": "safe",
+        "risk_score": 33,
+        "phishing_prob": 0.331,
+        "passed": true
+      },
+      {
+        "url": "https://apple.com",
+        "expected": "not_phishing",
+        "verdict": "safe",
+        "risk_score": 17,
+        "phishing_prob": 0.1655,
+        "passed": true
+      },
+      {
+        "url": "https://amazon.com",
+        "expected": "not_phishing",
+        "verdict": "safe",
+        "risk_score": 10,
+        "phishing_prob": 0.0956,
+        "passed": true
+      },
+      {
+        "url": "https://wikipedia.org",
+        "expected": "not_phishing",
+        "verdict": "suspicious",
+        "risk_score": 44,
+        "phishing_prob": 0.4396,
+        "passed": true
+      },
+      {
+        "url": "https://www.google.com/search?q=test",
+        "expected": "not_phishing",
+        "verdict": "phishing",
+        "risk_score": 100,
+        "phishing_prob": 0.9997,
+        "passed": false
+      },
+      {
+        "url": "https://docs.github.com",
+        "expected": "not_phishing",
+        "verdict": "safe",
+        "risk_score": 3,
+        "phishing_prob": 0.0297,
+        "passed": true
+      },
+      {
+        "url": "https://stackoverflow.com/questions",
+        "expected": "not_phishing",
+        "verdict": "phishing",
+        "risk_score": 100,
+        "phishing_prob": 1.0,
+        "passed": false
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Main_Page",
+        "expected": "not_phishing",
+        "verdict": "phishing",
+        "risk_score": 100,
+        "phishing_prob": 1.0,
+        "passed": false
+      },
+      {
+        "url": "http://secure-login-verify.attacker.com/login",
+        "expected": "not_safe",
+        "verdict": "phishing",
+        "risk_score": 100,
+        "phishing_prob": 1.0,
+        "passed": true
+      },
+      {
+        "url": "http://paypal.attacker.com/login",
+        "expected": "not_safe",
+        "verdict": "phishing",
+        "risk_score": 100,
+        "phishing_prob": 1.0,
+        "passed": true
+      },
+      {
+        "url": "http://github.com.attacker.com/login",
+        "expected": "not_safe",
+        "verdict": "phishing",
+        "risk_score": 100,
+        "phishing_prob": 1.0,
+        "passed": true
+      },
+      {
+        "url": "http://192.168.1.1/account/verify?password=x",
+        "expected": "not_safe",
+        "verdict": "phishing",
+        "risk_score": 100,
+        "phishing_prob": 1.0,
+        "passed": true
+      },
+      {
+        "url": "http://login-verify-secure-account.tk/confirm",
+        "expected": "not_safe",
+        "verdict": "phishing",
+        "risk_score": 100,
+        "phishing_prob": 1.0,
+        "passed": true
+      }
+    ]
+  },
+  "all_models_comparison": {
+    "LR-Scaled-52": {
+      "val_f1": 0.9957,
+      "test_f1": 0.9962,
+      "test_auc": 0.9981,
+      "sanity_passed": 12,
+      "sanity_total": 15
+    },
+    "LR-Scaled-48-no-shortcuts": {
+      "val_f1": 0.8094,
+      "test_f1": 0.88,
+      "test_auc": 0.9481,
+      "sanity_passed": 7,
+      "sanity_total": 15
+    },
+    "RF-52": {
+      "val_f1": 0.9965,
+      "test_f1": 0.9948,
+      "test_auc": 0.9986,
+      "sanity_passed": 6,
+      "sanity_total": 15
+    },
+    "RF-48-no-shortcuts": {
+      "val_f1": 0.907,
+      "test_f1": 0.9388,
+      "test_auc": 0.9944,
+      "sanity_passed": 5,
+      "sanity_total": 15
+    },
+    "GB-52": {
+      "val_f1": 0.993,
+      "test_f1": 0.9914,
+      "test_auc": 0.994,
+      "sanity_passed": 5,
+      "sanity_total": 15
+    },
+    "GB-48-no-shortcuts": {
+      "val_f1": 0.9925,
+      "test_f1": 0.9904,
+      "test_auc": 0.9987,
+      "sanity_passed": 5,
+      "sanity_total": 15
+    }
+  },
+  "threshold_safe": 40,
+  "threshold_suspicious": 70,
+  "random_state": 42
+}

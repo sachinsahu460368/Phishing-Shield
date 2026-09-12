@@ -1,0 +1,3 @@
+import { Check, Circle } from 'lucide-react'
+const steps = ['URL validation', 'URL sanitization', 'Extracting URL features', 'Running ML classification', 'Generating explanation']
+export default function AnalysisLoader() { return <section className="loader-card card" aria-live="polite"><div><span className="eyebrow">Analysis in progress</span><h3>Inspecting URL signals</h3><p>This normally takes only a moment.</p></div><ol>{steps.map((step, index) => <li key={step} className={index < 2 ? 'done' : index === 2 ? 'active' : ''}>{index < 2 ? <Check size={16}/> : <Circle size={16}/>}<span>{step}</span></li>)}</ol></section> }

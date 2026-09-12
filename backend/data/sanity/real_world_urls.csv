@@ -1,0 +1,51 @@
+url,expected_label,category,notes
+https://google.com,legitimate,bare_domain,Standard search page
+https://github.com,legitimate,bare_domain,Standard git host
+https://microsoft.com,legitimate,bare_domain,Corporate
+https://apple.com,legitimate,bare_domain,Corporate
+https://amazon.com,legitimate,bare_domain,Corporate
+https://wikipedia.org,legitimate,bare_domain,Non-profit
+https://www.google.com/search?q=phishing+protection,legitimate,query_params,Standard search with query
+https://docs.github.com/en/get-started,legitimate,docs,Nested documentation path
+https://stackoverflow.com/questions/tagged/python,legitimate,deep_path,Tags page
+https://en.wikipedia.org/wiki/Main_Page,legitimate,wiki_page,Standard wiki path
+https://openai.com/blog/introducing-gpt-4o,legitimate,article,Blog post
+https://react.dev/reference/react,legitimate,docs,Documentation
+https://www.linkedin.com/in/sachi-test-profile,legitimate,profile,Profile path
+https://twitter.com/anthropicai,legitimate,social,Social profile
+https://youtube.com/watch?v=dQw4w9WgXcQ,legitimate,query_params,Video page
+https://facebook.com/groups/testgroup,legitimate,social,Group page
+https://www.ibm.com/topics/artificial-intelligence,legitimate,article,Topic page
+https://news.ycombinator.com/item?id=1234567,legitimate,forum,News item
+https://github.com/anthropic/claude-code,legitimate,repo,Repo path
+https://microsoft.com/en-us/microsoft-365,legitimate,product,Product path
+https://www.reddit.com/r/technology/comments/123456,legitimate,forum,Reddit post
+https://netflix.com/browse,legitimate,web_app,Browsing
+https://example.com,legitimate,bare_domain,Generic
+https://www.nist.gov/cybersecurity,legitimate,gov,Gov site
+https://www.whois.com/whois/google.com,legitimate,service,Service tool
+https://paypal.attacker.com/login,phishing,brand_in_subdomain,Classic impersonation
+https://secure-login-verify.attacker.com/login,phishing,suspicious_keywords,Phishing-like vocabulary
+https://github.com.attacker.com/verify,phishing,typosquatting,Brand impersonation
+https://192.168.1.1/account/verify?pass=12345,phishing,ip_host,Internal-ish address usage
+https://login.security-verify-account.tk/confirm,phishing,suspicious_tld,Free TLD
+https://paypal-verify-secure.com/login,phishing,brand_typosquatting,Typosquatting
+https://amazon-support.verify-account.com/login,phishing,brand_impersonation,Brand impersonation
+https://microsoft-account.login.com/verify,phishing,brand_impersonation,Brand in path/subdomain
+https://login.apple.security-update.com/verify,phishing,suspicious_keywords,Suspicious path keyword
+https://www.google.com.attacker.com/login,phishing,nested_domain,Nested impersonation
+https://verify-login.banking-service.ru/auth,phishing,suspicious_tld,Suspicious TLD/Kwd
+https://login-verify-secure-account.xyz/confirm,phishing,suspicious_tld,Free TLD
+https://104.21.34.12/login,phishing,ip_host,Raw IP phishing
+https://secure.pay-pal.com.attacker.com/login,phishing,brand_typosquatting,Typosquatting
+https://login.identity-verify.net/check,phishing,suspicious_keywords,Generic verify phishing
+https://microsoft-365-login.com/auth,phishing,brand_typosquatting,Typosquatting
+https://auth.verification-service.com/login,phishing,suspicious_keywords,Credential harvesting
+https://login.amazon-security.tk/check,phishing,suspicious_tld,Free TLD
+https://172.16.254.1/verify,phishing,ip_host,Internal-ish IP
+https://www.github.com.verify-access.net/login,phishing,brand_typosquatting,Typosquatting
+https://www.linkedin-verify.com/login,phishing,brand_typosquatting,Typosquatting
+https://login.facebook.security-check.xyz/auth,phishing,suspicious_tld,Free TLD
+https://verify-secure-account.com.attacker.com/login,phishing,typosquatting,Domain obfuscation
+https://login.bank-name.com.verify-auth.net/check,phishing,nested_domain,Nested brand
+https://123.45.67.89/account/login,phishing,ip_host,Raw IP
