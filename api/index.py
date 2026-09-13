@@ -1,5 +1,9 @@
 import sys
-import os
-sys.path.append(os.path.join(os.getcwd(), 'backend'))
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+BACKEND_DIR = ROOT_DIR / "backend"
+
+sys.path.insert(0, str(BACKEND_DIR))
 
 from app.main import app

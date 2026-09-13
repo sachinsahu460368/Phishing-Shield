@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 APP_ENV = os.getenv("APP_ENV", "development")
 HOST = os.getenv("HOST", "127.0.0.1")
